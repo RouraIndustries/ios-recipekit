@@ -12,14 +12,23 @@ struct RecipeCarouselView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 16.0) {
                 ForEach(0 ..< 10, id: \.self) { item in
-                    RecipeCard(item: item)
+                    NavigationLink(value: item) {
+                        RecipeCard(item: item)
+                    }
                 }
             }
+            .scrollTargetLayout()
         }
         .contentMargins(.horizontal, 16.0, for: .scrollContent)
+        .scrollTargetBehavior(.viewAligned)
+        .navigationDestination(for: Int.self) { item in
+            Text("Item: \(item)")
+        }
     }
 }
 
 #Preview {
-    RecipeCarouselView()
+    NavigationStack {
+        RecipeCarouselView()
+    }
 }

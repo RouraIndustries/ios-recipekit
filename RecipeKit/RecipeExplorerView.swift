@@ -12,13 +12,17 @@ struct RecipeExplorerView: View {
 
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(sampleCategories, id: \.self) { category in
-                    Section {
-
-                    } header: {
-                        NavigationLink(value: category) {
-                            Text(category)
+            ScrollView {
+                LazyVStack(spacing: 12.0) {
+                    ForEach(sampleCategories, id: \.self) { category in
+                        Section {
+                            RecipeCarouselView()
+                        } header: {
+                            NavigationLink(value: category) {
+                                Text(category)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.horizontal, 16.0)
                         }
                     }
                 }
