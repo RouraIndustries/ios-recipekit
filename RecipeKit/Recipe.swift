@@ -14,7 +14,11 @@ final class Recipe {
     var summary: String
     var instructions: [String]
 
-
+    @Relationship(deleteRule: .cascade)
+    var ingredients: [Ingredient]?
+    @Relationship(inverse: \CuisineType.recipes)
+    var cuisineTypes: [CuisineType]?
+    
     init(title: String, summary: String, instructions: [String]) {
         self.title = title
         self.summary = summary

@@ -14,6 +14,8 @@ final class Ingredient {
     var quantity: Double
     var unit: String
 
+    var recipe: Recipe?
+
     init(name: String, quantity: Double, unit: String) {
         self.name = name
         self.quantity = quantity
