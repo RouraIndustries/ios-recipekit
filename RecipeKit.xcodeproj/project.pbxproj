@@ -11,6 +11,7 @@
 		03E4F7832BD0915F0040C447 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E4F7822BD0915F0040C447 /* ContentView.swift */; };
 		03E4F7852BD091600040C447 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03E4F7842BD091600040C447 /* Assets.xcassets */; };
 		03E4F7892BD091600040C447 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03E4F7882BD091600040C447 /* Preview Assets.xcassets */; };
+		03E4F7902BD09A750040C447 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E4F78F2BD09A750040C447 /* AppTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		03E4F7842BD091600040C447 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03E4F7862BD091600040C447 /* RecipeKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RecipeKit.entitlements; sourceTree = "<group>"; };
 		03E4F7882BD091600040C447 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		03E4F78F2BD09A750040C447 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				03E4F7802BD0915E0040C447 /* RecipeKitApp.swift */,
 				03E4F7822BD0915F0040C447 /* ContentView.swift */,
+				03E4F78F2BD09A750040C447 /* AppTabView.swift */,
 				03E4F7842BD091600040C447 /* Assets.xcassets */,
 				03E4F7862BD091600040C447 /* RecipeKit.entitlements */,
 				03E4F7872BD091600040C447 /* Preview Content */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03E4F7902BD09A750040C447 /* AppTabView.swift in Sources */,
 				03E4F7832BD0915F0040C447 /* ContentView.swift in Sources */,
 				03E4F7812BD0915E0040C447 /* RecipeKitApp.swift in Sources */,
 			);
