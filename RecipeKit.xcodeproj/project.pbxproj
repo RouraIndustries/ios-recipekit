@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03D4EEDF2BD0A09900F5ABBC /* RecipeExplorerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D4EEDE2BD0A09900F5ABBC /* RecipeExplorerView.swift */; };
 		034F03CE2BD19992000D40EF /* RecipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034F03CD2BD19992000D40EF /* RecipeCard.swift */; };
+		034F03D32BD1C8DE000D40EF /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034F03D22BD1C8DE000D40EF /* Recipe.swift */; };
+		03D4EEDF2BD0A09900F5ABBC /* RecipeExplorerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D4EEDE2BD0A09900F5ABBC /* RecipeExplorerView.swift */; };
 		03D4EEE12BD0A0A300F5ABBC /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D4EEE02BD0A0A300F5ABBC /* SearchView.swift */; };
 		03D4EEE32BD0A0AE00F5ABBC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D4EEE22BD0A0AE00F5ABBC /* ProfileView.swift */; };
 		03D4EEE52BD0BE1600F5ABBC /* RecipeCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D4EEE42BD0BE1600F5ABBC /* RecipeCarouselView.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		034F03CD2BD19992000D40EF /* RecipeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCard.swift; sourceTree = "<group>"; };
+		034F03D22BD1C8DE000D40EF /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		03D4EEDE2BD0A09900F5ABBC /* RecipeExplorerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeExplorerView.swift; sourceTree = "<group>"; };
 		03D4EEE02BD0A0A300F5ABBC /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		03D4EEE22BD0A0AE00F5ABBC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				03D4EEE22BD0A0AE00F5ABBC /* ProfileView.swift */,
 				03D4EEE42BD0BE1600F5ABBC /* RecipeCarouselView.swift */,
 				034F03CD2BD19992000D40EF /* RecipeCard.swift */,
+				034F03D22BD1C8DE000D40EF /* Recipe.swift */,
 				03E4F7842BD091600040C447 /* Assets.xcassets */,
 				03E4F7862BD091600040C447 /* RecipeKit.entitlements */,
 				03E4F7872BD091600040C447 /* Preview Content */,
@@ -163,6 +166,7 @@
 				03D4EEDF2BD0A09900F5ABBC /* RecipeExplorerView.swift in Sources */,
 				03E4F7832BD0915F0040C447 /* ContentView.swift in Sources */,
 				034F03CE2BD19992000D40EF /* RecipeCard.swift in Sources */,
+				034F03D32BD1C8DE000D40EF /* Recipe.swift in Sources */,
 				03D4EEE32BD0A0AE00F5ABBC /* ProfileView.swift in Sources */,
 				03E4F7812BD0915E0040C447 /* RecipeKitApp.swift in Sources */,
 			);
