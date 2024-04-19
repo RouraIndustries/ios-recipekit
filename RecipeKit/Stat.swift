@@ -12,11 +12,13 @@ import SwiftData
 final class Stat {
     var name: String
     var quantity: Double
+    var unit: String
 
     var recipe: Recipe?
 
-    init(name: String, quantity: Double) {
+    init(name: String, quantity: Double, unit: String) {
         self.name = name
         self.quantity = quantity
+        self.unit = unit
     }
 }

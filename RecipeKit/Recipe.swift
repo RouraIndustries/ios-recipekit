@@ -19,6 +19,19 @@ final class Recipe {
     @Attribute(.externalStorage)
     var imageData: Data?
 
+    @Relationship(deleteRule: .cascade)
+    var ingredients: [Ingredient]?
+    @Relationship(deleteRule: .cascade)
+    var macros: [Macro]?
+    @Relationship(deleteRule: .cascade)
+    var nutritionalInformation: [NutritionalInformation]?
+    @Relationship(deleteRule: .cascade)
+    var stats: [Stat]?
+    @Relationship(inverse: \CuisineType.recipes)
+    var cuisineTypes: [CuisineType]?
+    @Relationship(inverse: \MealType.recipes)
+    var mealTypes: [MealType]?
+
     init(
         title: String,
         content: String,

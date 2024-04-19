@@ -10,11 +10,11 @@ import SwiftData
 
 @Model
 final class MealType {
-    var name: String = ""
+    var type: String = ""
 
     var recipes: [Recipe]?
 
-    init(name: String) {
-        self.name = name
+    init(type: String) {
+        self.type = type
     }
 }

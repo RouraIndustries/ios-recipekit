@@ -13,7 +13,7 @@ struct CreateRecipeView: View {
     @Query private var recipes: [Recipe]
 
     @State private var recipeTitle = ""
-    @State private var recipeSummary = ""
+    @State private var recipeContent = ""
     @State private var recipeCuisineType = ""
 
     var body: some View {
@@ -21,23 +21,26 @@ struct CreateRecipeView: View {
             Form {
                 TextField("Recipe title", text: $recipeTitle)
 
-                TextField("Recipe summary", text: $recipeSummary)
+                TextField("Recipe content", text: $recipeContent)
 
                 TextField("Recipe cuisine type", text: $recipeCuisineType)
 
                 Button("Create") {
                     let newRecipe = Recipe(
                         title: recipeTitle,
-                        summary: recipeSummary,
+                        content: recipeContent,
+                        allergenInformation: "",
+                        tipsAndVariations: [],
                         instructions: []
                     )
+
                     let cuisineType = CuisineType(type: recipeCuisineType)
                     newRecipe.cuisineTypes?.append(cuisineType)
 
                     modelContext.insert(newRecipe)
 
                     recipeTitle.removeAll()
-                    recipeSummary.removeAll()
+                    recipeContent.removeAll()
                     recipeCuisineType.removeAll()
                 }
                 .frame(maxWidth: .infinity, alignment: .trailing)
