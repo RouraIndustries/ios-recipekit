@@ -11,17 +11,25 @@ import SwiftData
 @Model
 final class Recipe {
     var title: String
-    var summary: String
+    var content: String
+    var allergenInformation: String
+    var tipsAndVariations: [String]
     var instructions: [String]
 
-    @Relationship(deleteRule: .cascade)
-    var ingredients: [Ingredient]?
-    @Relationship(inverse: \CuisineType.recipes)
-    var cuisineTypes: [CuisineType]?
-    
-    init(title: String, summary: String, instructions: [String]) {
+    @Attribute(.externalStorage)
+    var imageData: Data?
+
+    init(
+        title: String,
+        content: String,
+        allergenInformation: String,
+        tipsAndVariations: [String],
+        instructions: [String]
+    ) {
         self.title = title
-        self.summary = summary
+        self.content = content
+        self.allergenInformation = allergenInformation
+        self.tipsAndVariations = tipsAndVariations
         self.instructions = instructions
     }
 }
