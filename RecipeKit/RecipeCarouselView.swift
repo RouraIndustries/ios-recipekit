@@ -21,9 +21,6 @@ struct RecipeCarouselView: View {
         }
         .contentMargins(.horizontal, 16.0, for: .scrollContent)
         .scrollTargetBehavior(.viewAligned)
-        .navigationDestination(for: Int.self) { item in
-            Text("Item: \(item)")
-        }
     }
 }
 

@@ -32,6 +32,9 @@ struct RecipeExplorerView: View {
             .navigationDestination(for: String.self) { category in
                 Text(category)
             }
+            .navigationDestination(for: Int.self) { item in
+                Text("Item: \(item)")
+            }
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button { showCreateRecipeView.toggle() } label: {
