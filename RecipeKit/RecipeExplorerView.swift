@@ -10,6 +10,8 @@ import SwiftUI
 struct RecipeExplorerView: View {
     private let sampleCategories: [String] = ["American", "Italian", "Mediterranean"]
 
+    @State private var showCreateRecipeView = false
+
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -29,6 +31,16 @@ struct RecipeExplorerView: View {
             }
             .navigationDestination(for: String.self) { category in
                 Text(category)
+            }
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button { showCreateRecipeView.toggle() } label: {
+                        Label("Add", systemImage: "plus")
+                    }
+                    .sheet(isPresented: $showCreateRecipeView) {
+                        CreateRecipeView()
+                    }
+                }
             }
         }
     }
