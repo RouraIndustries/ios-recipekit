@@ -10,7 +10,7 @@ import SwiftData
 
 @Model
 final class CuisineType {
-    var type: String
+    var type: String = ""
 
     var recipes: [Recipe]?
 

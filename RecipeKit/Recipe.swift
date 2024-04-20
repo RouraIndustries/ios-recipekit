@@ -10,11 +10,11 @@ import SwiftData
 
 @Model
 final class Recipe {
-    var title: String
-    var content: String
-    var allergenInformation: String
-    var tipsAndVariations: [String]
-    var instructions: [String]
+    var title: String = ""
+    var content: String = ""
+    var allergenInformation: String = ""
+    var tipsAndVariations: [String] = []
+    var instructions: [String] = []
 
     @Attribute(.externalStorage)
     var imageData: Data?

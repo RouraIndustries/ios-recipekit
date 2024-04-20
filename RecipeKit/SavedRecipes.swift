@@ -10,7 +10,7 @@ import SwiftData
 
 @Model
 final class SavedRecipes {
-    var savedRecipes: [Recipe]
+    var savedRecipes: [Recipe] = []
 
     init(savedRecipes: [Recipe]) {
         self.savedRecipes = savedRecipes
