@@ -2,14 +2,14 @@
 //  RecipeKitApp.swift
 //  RecipeKit
 //
-//  Created by Christopher J. Roura on 4/17/24.
+//  Created by Christopher J. Roura on 4/19/24.
 //
 
 import SwiftUI
 import SwiftData
 
 @main
-struct Portfolio_SwiftDataApp: App {
+struct RecipeKitApp: App {
     // MARK: - Properties
 
     // The sharedModelContainer is the main container for SwiftData.
