@@ -35,16 +35,6 @@ struct RecipeExplorerView: View {
             .navigationDestination(for: Int.self) { item in
                 Text("Item: \(item)")
             }
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button { showCreateRecipeView.toggle() } label: {
-                        Label("Add", systemImage: "plus")
-                    }
-                    .sheet(isPresented: $showCreateRecipeView) {
-                        CreateRecipeView()
-                    }
-                }
-            }
         }
     }
 }
