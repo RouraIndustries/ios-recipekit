@@ -9,10 +9,11 @@ import Foundation
 import SwiftData
 
 @Model
-final class SavedRecipes {
-    var savedRecipes: [Recipe] = []
+final class SavedRecipe {
+    let id = UUID()
+    var recipeID: String?
 
-    init(savedRecipes: [Recipe]) {
-        self.savedRecipes = savedRecipes
+    init(recipeID: String) {
+        self.recipeID = recipeID
     }
 }

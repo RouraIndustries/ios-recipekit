@@ -16,7 +16,7 @@ struct RecipeKitApp: App {
     // It holds the schema and configurations necessary for managing data.
     var sharedModelContainer: ModelContainer = {
         // Define the schema for the data, which includes the Issue model. This is a PersistentModel.
-        let schema = Schema([ Recipe.self ])
+        let schema = Schema([ SavedRecipe.self ])
 
         // Create a model configuration specifying the schema.
         let modelConfiguration = ModelConfiguration(schema: schema)

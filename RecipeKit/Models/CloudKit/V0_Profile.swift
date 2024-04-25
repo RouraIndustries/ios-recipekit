@@ -1,5 +1,5 @@
 //
-//  Profile.swift
+//  V0_Profile.swift
 //  RecipeKit
 //
 //  Created by Christopher J. Roura on 4/19/24.
@@ -8,21 +8,32 @@
 import CloudKit
 import SwiftUI
 
-// MARK: - Profile model
+// MARK: - V0_Profile model
 
-struct Profile {
+struct V0_Profile {
     let ckRecordID: CKRecord.ID
     var firstName: String?
     var lastName: String?
-    var company: String?
+    var username: String?
     var bio: String?
     var avatarAsset: CKAsset?
     var joinedOnDate: Date?
 }
 
-// MARK: - RKProfile - helpers
+// MARK: - RKProfile - constants
 
-extension Profile {
+extension V0_Profile {
+    static let kFirstName = "firstName"
+    static let kLastName = "lastName"
+    static let kUsername = "username"
+    static let kBio = "bio"
+    static let kAvatarAsset = "avatarAsset"
+    static let kJoinedOnDate = "joinedOnDate"
+}
+
+// MARK: - V0_Profile - helpers
+
+extension V0_Profile {
     var identifier: String {
         get { ckRecordID.recordName }
     }
@@ -37,9 +48,9 @@ extension Profile {
         set { lastName = newValue }
     }
 
-    var profileCompany: String {
-        get { company ?? "" }
-        set { company = newValue }
+    var profileUsername: String {
+        get { username ?? "" }
+        set { username = newValue }
     }
 
     var profileBio: String {
@@ -52,25 +63,14 @@ extension Profile {
     }
 }
 
-// MARK: - Profile - constants
+// MARK: - V0_Profile - initializer
 
-extension Profile {
-    static let kFirstName = "firstName"
-    static let kLastName = "lastName"
-    static let kCompany = "company"
-    static let kBio = "bio"
-    static let kAvatarAsset = "avatarAsset"
-    static let kJoinedOnDate = "joinedOnDate"
-}
-
-// MARK: - Profile - initializer
-
-extension Profile {
+extension V0_Profile {
     init(record: CKRecord) {
         ckRecordID = record.recordID
         firstName = record[Self.kFirstName] as? String ?? "No first name"
         lastName = record[Self.kLastName] as? String ?? "No last name"
-        company = record[Self.kCompany] as? String ?? "No company"
+        username = record[Self.kUsername] as? String ?? "No username"
         bio = record[Self.kBio] as? String ?? "No bio"
         avatarAsset = record[Self.kAvatarAsset] as? CKAsset
         joinedOnDate = record[Self.kJoinedOnDate] as? Date ?? Date.now
