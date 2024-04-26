@@ -31,6 +31,7 @@
 		03C290452BD3693200AE4CC5 /* SavedRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C290362BD3693100AE4CC5 /* SavedRecipes.swift */; };
 		03FFC1CD2BDB2A7E000710AF /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FFC1CC2BDB2A7E000710AF /* CloudKitManager.swift */; };
 		03FFC1CF2BDB2F92000710AF /* CloudKitManagerEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FFC1CE2BDB2F92000710AF /* CloudKitManagerEnvironmentKey.swift */; };
+		03FFC1D12BDB30F3000710AF /* UserOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FFC1D02BDB30F3000710AF /* UserOperations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		03C290362BD3693100AE4CC5 /* SavedRecipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedRecipes.swift; sourceTree = "<group>"; };
 		03FFC1CC2BDB2A7E000710AF /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		03FFC1CE2BDB2F92000710AF /* CloudKitManagerEnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManagerEnvironmentKey.swift; sourceTree = "<group>"; };
+		03FFC1D02BDB30F3000710AF /* UserOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOperations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				03C290292BD368EE00AE4CC5 /* RecipeCarouselView.swift */,
 				03C290282BD368EA00AE4CC5 /* RecipeExplorerView.swift */,
 				03C2902F2BD3690C00AE4CC5 /* SearchView.swift */,
+				03FFC1D02BDB30F3000710AF /* UserOperations.swift */,
 				03FFC1CE2BDB2F92000710AF /* CloudKitManagerEnvironmentKey.swift */,
 				03FFC1CC2BDB2A7E000710AF /* CloudKitManager.swift */,
 				039BD5DC2BDAE6B90030190D /* Models */,
@@ -268,6 +271,7 @@
 				03FFC1CD2BDB2A7E000710AF /* CloudKitManager.swift in Sources */,
 				03C2903A2BD3693200AE4CC5 /* V0_Macro.swift in Sources */,
 				039BD5E22BDAE76C0030190D /* Macro.swift in Sources */,
+				03FFC1D12BDB30F3000710AF /* UserOperations.swift in Sources */,
 				03C290262BD368AF00AE4CC5 /* AppTabView.swift in Sources */,
 				03C290372BD3693200AE4CC5 /* RecipeCard.swift in Sources */,
 				03C290382BD3693200AE4CC5 /* RecipeExplorerView.swift in Sources */,
