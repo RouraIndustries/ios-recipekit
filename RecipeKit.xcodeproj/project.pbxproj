@@ -29,6 +29,7 @@
 		03C290412BD3693200AE4CC5 /* V0_Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C290322BD3691900AE4CC5 /* V0_Ingredient.swift */; };
 		03C290422BD3693200AE4CC5 /* V0_NutritionalInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C290332BD3691D00AE4CC5 /* V0_NutritionalInformation.swift */; };
 		03C290452BD3693200AE4CC5 /* SavedRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C290362BD3693100AE4CC5 /* SavedRecipes.swift */; };
+		03FFC1CD2BDB2A7E000710AF /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FFC1CC2BDB2A7E000710AF /* CloudKitManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		03C290322BD3691900AE4CC5 /* V0_Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V0_Ingredient.swift; sourceTree = "<group>"; };
 		03C290332BD3691D00AE4CC5 /* V0_NutritionalInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V0_NutritionalInformation.swift; sourceTree = "<group>"; };
 		03C290362BD3693100AE4CC5 /* SavedRecipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedRecipes.swift; sourceTree = "<group>"; };
+		03FFC1CC2BDB2A7E000710AF /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				03C290292BD368EE00AE4CC5 /* RecipeCarouselView.swift */,
 				03C290282BD368EA00AE4CC5 /* RecipeExplorerView.swift */,
 				03C2902F2BD3690C00AE4CC5 /* SearchView.swift */,
+				03FFC1CC2BDB2A7E000710AF /* CloudKitManager.swift */,
 				039BD5DC2BDAE6B90030190D /* Models */,
 				03C2901A2BD3686200AE4CC5 /* Assets.xcassets */,
 				03C2901C2BD3686200AE4CC5 /* RecipeKit.entitlements */,
@@ -259,6 +262,7 @@
 				03C2903D2BD3693200AE4CC5 /* V0_CuisineType.swift in Sources */,
 				039BD5EA2BDAE78F0030190D /* V0_Profile.swift in Sources */,
 				03C2903F2BD3693200AE4CC5 /* SearchView.swift in Sources */,
+				03FFC1CD2BDB2A7E000710AF /* CloudKitManager.swift in Sources */,
 				03C2903A2BD3693200AE4CC5 /* V0_Macro.swift in Sources */,
 				039BD5E22BDAE76C0030190D /* Macro.swift in Sources */,
 				03C290262BD368AF00AE4CC5 /* AppTabView.swift in Sources */,
