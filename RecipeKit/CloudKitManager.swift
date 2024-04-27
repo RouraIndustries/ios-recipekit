@@ -246,7 +246,6 @@ private extension CloudKitManager {
 
         let records = queriedRecords.matchResults.compactMap { try? $1.get() }
         results += records.compactMap(T.init)
-//        Log.info(cursor == nil ? "1️⃣ results = \(results)" : "⭕️ Next batch of results = \(results)")
 
         guard let nextCursor = queriedRecords.queryCursor else { return results }
 
