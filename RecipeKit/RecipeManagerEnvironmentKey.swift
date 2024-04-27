@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct RecipeManagerEnvironmentKey: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+private struct RecipeManagerEnvironmentKey: EnvironmentKey {
+    static var defaultValue = RecipeManager()
 }
 
-#Preview {
-    RecipeManagerEnvironmentKey()
+extension EnvironmentValues {
+    var recipeManager: RecipeManager {
+        get { self[RecipeManagerEnvironmentKey.self] }
+        set { self[RecipeManagerEnvironmentKey.self] = newValue }
+    }
 }

@@ -5,14 +5,11 @@
 //  Created by Christopher J. Roura on 4/26/24.
 //
 
-import SwiftUI
+import CloudKit
 
-struct CategoryOperations: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    CategoryOperations()
+protocol CategoryOperations {
+    func getCuisineTypes() async throws -> [V0_CuisineType]
+    func getMealTypes() async throws -> [V0_MealType]
+    func getMacros() async throws -> [V0_Macro]
+    func getIngredients() async throws -> [V0_Ingredient]
 }
