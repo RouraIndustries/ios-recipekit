@@ -32,7 +32,7 @@ extension V0_Stat {
     }
 }
 
-extension V0_Stat {
+extension V0_Stat: CKRecordConvertible {
     init(record: CKRecord) {
         ckRecordID = record.recordID
         name = record[Self.kName] as? String ?? ""

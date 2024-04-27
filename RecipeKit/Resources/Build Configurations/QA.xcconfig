@@ -1,0 +1,14 @@
+//
+//  QA.xcconfig
+//  RecipeKit
+//
+//  Created by Christopher J. Roura on 11/29/23.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Base.xcconfig"
+
+RK_ACCENT_COLOR = QAAccentColor
+RK_ENTITLEMENTS = RecipeKit/Resources/Entitlements/RecipeKit-Dev.entitlements

@@ -36,7 +36,7 @@ extension V0_Macro {
     }
 }
 
-extension V0_Macro {
+extension V0_Macro: CKRecordConvertible {
     init(record: CKRecord) {
         ckRecordID = record.recordID
         name = record[Self.kName] as? String ?? ""

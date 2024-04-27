@@ -22,7 +22,7 @@ extension V0_MealType {
     }
 }
 
-extension V0_MealType {
+extension V0_MealType: CKRecordConvertible {
     init(record: CKRecord) {
         ckRecordID = record.recordID
         type = MealType(rawValue: record[Self.kType] as? String ?? "")

@@ -60,7 +60,7 @@ extension V0_Recipe {
     }
 }
 
-extension V0_Recipe {
+extension V0_Recipe: CKRecordConvertible {
     init(record: CKRecord) {
         ckRecordID = record.recordID
         title = record[Self.kTitle] as? String ?? "No title"
