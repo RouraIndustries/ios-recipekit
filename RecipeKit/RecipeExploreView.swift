@@ -24,7 +24,20 @@ struct RecipeExploreView: View {
                             RecipeCarouselView(recipes: viewModel.recipesForCuisineType(cuisineType))
                         } header: {
                             NavigationLink(value: cuisineType) {
-                                Text(cuisineType.cuisineType.rawValue)
+                                HStack {
+                                    Text(cuisineType.cuisineType.rawValue)
+
+                                    Spacer()
+                                    
+                                    HStack(spacing: 2.0) {
+                                        Text("See all")
+                                        Image(systemName: "chevron.right")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 8, height: 8)
+                                            .fontWeight(.bold)
+                                    }
+                                }
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.horizontal, 16.0)
@@ -39,8 +52,8 @@ struct RecipeExploreView: View {
             }
             .refreshable { await viewModel.fetchDataTaskGroup() }
             .overlay { if viewModel.isLoading { LoadingView() }}
-            .navigationDestination(for: String.self) { category in
-                Text(category)
+            .navigationDestination(for: V0_CuisineType.self) { cuisineType in
+                CuisineTypeRecipesListView(cuisineType: cuisineType, recipes: viewModel.recipesForCuisineType(cuisineType))
             }
             .navigationDestination(for: V0_Recipe.self) { recipe in
                 RecipeDetailsView(recipe: recipe)
