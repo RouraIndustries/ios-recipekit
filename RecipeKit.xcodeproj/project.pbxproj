@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03998CA52BDD86D300557F4A /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03998CA42BDD86D300557F4A /* OnboardView.swift */; };
 		03998CA32BDD850800557F4A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03998CA22BDD850800557F4A /* RootView.swift */; };
 		039BD5E22BDAE76C0030190D /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039BD5E02BDAE76C0030190D /* Macro.swift */; };
 		039BD5E92BDAE78F0030190D /* V0_Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039BD5E72BDAE78F0030190D /* V0_Recipe.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03998CA42BDD86D300557F4A /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		03998CA22BDD850800557F4A /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		039BD5E02BDAE76C0030190D /* Macro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
 		039BD5E72BDAE78F0030190D /* V0_Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V0_Recipe.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				03C290302BD3690E00AE4CC5 /* Info.plist */,
 				03C290162BD3686000AE4CC5 /* RecipeKitApp.swift */,
 				03C290182BD3686000AE4CC5 /* ContentView.swift */,
+				03998CA42BDD86D300557F4A /* OnboardView.swift */,
 				03C290252BD368AF00AE4CC5 /* AppTabView.swift */,
 				03998CA22BDD850800557F4A /* RootView.swift */,
 				03C2902E2BD3690700AE4CC5 /* ProfileView.swift */,
@@ -321,6 +324,7 @@
 				03C290192BD3686000AE4CC5 /* ContentView.swift in Sources */,
 				03C2903E2BD3693200AE4CC5 /* ProfileView.swift in Sources */,
 				03FFC1DF2BDC992B000710AF /* RecipeExploreViewModel.swift in Sources */,
+				03998CA52BDD86D300557F4A /* OnboardView.swift in Sources */,
 				03FFC1D52BDB884B000710AF /* RecordType.swift in Sources */,
 				03FFC1D72BDB894B000710AF /* RecordOperations.swift in Sources */,
 				03C290172BD3686000AE4CC5 /* RecipeKitApp.swift in Sources */,
