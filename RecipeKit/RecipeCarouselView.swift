@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct RecipeCarouselView: View {
+    let recipes: [V0_Recipe]
+
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 16.0) {
-                ForEach(0 ..< 10, id: \.self) { item in
-                    NavigationLink(value: item) {
-                        RecipeCard(item: item)
+                ForEach(recipes) { recipe in
+                    NavigationLink(value: recipe) {
+                        RecipeCard(recipe: recipe)
                     }
                 }
             }
@@ -26,6 +28,6 @@ struct RecipeCarouselView: View {
 
 #Preview {
     NavigationStack {
-        RecipeCarouselView()
+        RecipeCarouselView(recipes: [])
     }
 }

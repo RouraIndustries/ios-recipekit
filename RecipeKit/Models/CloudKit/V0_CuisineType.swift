@@ -17,7 +17,7 @@ extension V0_CuisineType {
 }
 
 extension V0_CuisineType {
-    var categoryType: Cuisine {
+    var cuisineType: Cuisine {
         get { type ?? .none }
     }
 }

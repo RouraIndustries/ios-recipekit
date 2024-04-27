@@ -16,6 +16,13 @@ extension RecipeExploreView {
         
         var isLoading = false
 
+        func recipesForCuisineType(_ cuisineType: V0_CuisineType) -> [V0_Recipe] {
+            guard let recipeManager else { return [] }
+
+            return recipeManager.recipes
+                .filter { $0.cuisineType?.recordID == cuisineType.ckRecordID }
+        }
+
         func fetchDataTaskGroup() async {
             guard let recipeManager, let cloudKitManager else { return }
             showLoadingView()
