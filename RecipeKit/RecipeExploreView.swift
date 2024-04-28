@@ -1,5 +1,5 @@
 //
-//  RecipeExploreView.swift
+//  RecipeExplorerView.swift
 //  RecipeKit
 //
 //  Created by Christopher J. Roura on 4/17/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RecipeExploreView: View {
+struct RecipeExplorerView: View {
     private let sampleCategories: [String] = ["American", "Italian", "Mediterranean"]
 
     @State private var showCreateRecipeView = false
@@ -40,5 +40,5 @@ struct RecipeExploreView: View {
 }
 
 #Preview {
-    RecipeExploreView()
+    RecipeExplorerView()
 }
