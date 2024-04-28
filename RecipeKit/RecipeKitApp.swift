@@ -12,6 +12,8 @@ import SwiftData
 struct RecipeKitApp: App {
     // MARK: - Properties
 
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     // The sharedModelContainer is the main container for SwiftData.
     // It holds the schema and configurations necessary for managing data.
     var sharedModelContainer: ModelContainer = {
