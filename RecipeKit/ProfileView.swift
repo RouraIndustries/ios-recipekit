@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct ProfileView: View {
     @Environment(\.cloudKitManager) private var cloudKitManager
@@ -15,11 +16,21 @@ struct ProfileView: View {
         ScrollView {
             VStack {
                 HStack {
-                    Image(systemName: "person.circle.fill")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 72.0, height: 72.0)
-                        .clipShape(.circle)
+                    PhotosPicker(selection: $viewModel.photosPickerItem, matching: .images, photoLibrary: .shared()) {
+                        Image(uiImage: viewModel.avatar)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 96, height: 96)
+                            .clipShape(.circle)
+                            .overlay(alignment: .bottom) {
+                                Image(systemName: "square.and.pencil")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 14, height: 14)
+                                    .offset(y: -4.0)
+                            }
+                    }
+                    .buttonStyle(.plain)
 
                     VStack(alignment: .leading) {
                         TextField("First name", text: $viewModel.firstName)

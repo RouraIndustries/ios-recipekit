@@ -61,6 +61,11 @@ extension V0_Profile {
     var profileJoinedOnDate: Date {
         get { joinedOnDate ?? .now }
     }
+
+    var profileImage: UIImage {
+        get { avatarAsset?.convertToUIImage(in: .square) ?? PlaceholderImage.avatar }
+        set { avatarAsset = newValue.convertToCKAsset() }
+    }
 }
 
 // MARK: - V0_Profile - initializer

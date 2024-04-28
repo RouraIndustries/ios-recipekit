@@ -58,6 +58,14 @@ extension V0_Recipe {
     var recipeTipsAndVariations: [String] {
         get { tipsAndVariations ?? [] }
     }
+
+    var squareImage: Image {
+        get { Image(uiImage: squareAsset?.convertToUIImage(in: .square) ?? PlaceholderImage.square) }
+    }
+
+    var bannerImage: Image {
+        get { Image(uiImage: bannerAsset?.convertToUIImage(in: .banner) ?? PlaceholderImage.banner) }
+    }
 }
 
 extension V0_Recipe: CKRecordConvertible {

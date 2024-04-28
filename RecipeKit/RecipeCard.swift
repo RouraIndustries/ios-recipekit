@@ -28,7 +28,15 @@ struct RecipeCard: View {
 
     var small: some View {
         ZStack(alignment: .bottomLeading) {
-            Color.gray
+            recipe.squareImage
+                .resizable()
+                .scaledToFill()
+                .frame(
+                    minWidth: .zero,
+                    maxWidth: .infinity,
+                    minHeight: .zero,
+                    maxHeight: .infinity
+                )
 
             VStack(alignment: .leading, spacing: 8.0) {
                 Text("Recipe")
@@ -50,7 +58,15 @@ struct RecipeCard: View {
 
     var standard: some View {
         ZStack(alignment: .bottomLeading) {
-            Color.gray
+            recipe.squareImage
+                .resizable()
+                .scaledToFill()
+                .frame(
+                    minWidth: .zero,
+                    maxWidth: .infinity,
+                    minHeight: .zero,
+                    maxHeight: .infinity
+                )
 
             VStack(alignment: .leading, spacing: 8.0) {
                 Text("Recipe")
@@ -72,7 +88,15 @@ struct RecipeCard: View {
 
     var large: some View {
         ZStack(alignment: .bottomLeading) {
-            Color.gray
+            recipe.squareImage
+                .resizable()
+                .scaledToFill()
+                .frame(
+                    minWidth: .zero,
+                    maxWidth: .infinity,
+                    minHeight: .zero,
+                    maxHeight: .infinity
+                )
 
             VStack(alignment: .leading, spacing: 8.0) {
                 Text("Recipe")

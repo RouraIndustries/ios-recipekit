@@ -37,6 +37,10 @@
 		03998D6E2BDF11E600557F4A /* RecipeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03998D6D2BDF11E600557F4A /* RecipeDetailsViewModel.swift */; };
 		03998D702BDF11F800557F4A /* RecipeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03998D6F2BDF11F800557F4A /* RecipeDetailsView.swift */; };
 		03998D722BDF12C700557F4A /* CuisineTypeRecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03998D712BDF12C700557F4A /* CuisineTypeRecipeListView.swift */; };
+		03998D752BDF15F600557F4A /* UIImage-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03998D742BDF15F600557F4A /* UIImage-Ext.swift */; };
+		03998D772BDF16EF00557F4A /* PlaceholderImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03998D762BDF16EF00557F4A /* PlaceholderImage.swift */; };
+		03998D792BDF172600557F4A /* ImageDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03998D782BDF172600557F4A /* ImageDimension.swift */; };
+		03998D7B2BDF175500557F4A /* CKAsset-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03998D7A2BDF175500557F4A /* CKAsset-Ext.swift */; };
 		039BD5E22BDAE76C0030190D /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039BD5E02BDAE76C0030190D /* Macro.swift */; };
 		039BD5E92BDAE78F0030190D /* V0_Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039BD5E72BDAE78F0030190D /* V0_Recipe.swift */; };
 		039BD5EA2BDAE78F0030190D /* V0_Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039BD5E82BDAE78F0030190D /* V0_Profile.swift */; };
@@ -114,6 +118,10 @@
 		03998D6D2BDF11E600557F4A /* RecipeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewModel.swift; sourceTree = "<group>"; };
 		03998D6F2BDF11F800557F4A /* RecipeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsView.swift; sourceTree = "<group>"; };
 		03998D712BDF12C700557F4A /* CuisineTypeRecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuisineTypeRecipeListView.swift; sourceTree = "<group>"; };
+		03998D742BDF15F600557F4A /* UIImage-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage-Ext.swift"; sourceTree = "<group>"; };
+		03998D762BDF16EF00557F4A /* PlaceholderImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderImage.swift; sourceTree = "<group>"; };
+		03998D782BDF172600557F4A /* ImageDimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDimension.swift; sourceTree = "<group>"; };
+		03998D7A2BDF175500557F4A /* CKAsset-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKAsset-Ext.swift"; sourceTree = "<group>"; };
 		039BD5E02BDAE76C0030190D /* Macro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
 		039BD5E72BDAE78F0030190D /* V0_Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V0_Recipe.swift; sourceTree = "<group>"; };
 		039BD5E82BDAE78F0030190D /* V0_Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V0_Profile.swift; sourceTree = "<group>"; };
@@ -319,9 +327,13 @@
 				03998CF82BDE0D6000557F4A /* CloudKitManagerEnvironmentKey.swift */,
 				03FFC1CC2BDB2A7E000710AF /* CloudKitManager.swift */,
 				03998CFE2BDE0F2F00557F4A /* SafeAreaButtonGradient.swift */,
+				03998D762BDF16EF00557F4A /* PlaceholderImage.swift */,
+				03998D782BDF172600557F4A /* ImageDimension.swift */,
 				03998D0E2BDE10BA00557F4A /* LoadingView.swift */,
 				03998D002BDE0F4C00557F4A /* RecordType.swift */,
 				03998CFC2BDE0F0C00557F4A /* View-Ext.swift */,
+				03998D742BDF15F600557F4A /* UIImage-Ext.swift */,
+				03998D7A2BDF175500557F4A /* CKAsset-Ext.swift */,
 				03998D2B2BDE174400557F4A /* Resources */,
 				039BD5DC2BDAE6B90030190D /* Models */,
 			);
@@ -509,9 +521,11 @@
 				039BD5EA2BDAE78F0030190D /* V0_Profile.swift in Sources */,
 				03998D012BDE0F4C00557F4A /* RecordType.swift in Sources */,
 				03998D052BDE0F7F00557F4A /* RecipeOperations.swift in Sources */,
+				03998D7B2BDF175500557F4A /* CKAsset-Ext.swift in Sources */,
 				03998D0F2BDE10BA00557F4A /* LoadingView.swift in Sources */,
 				03998D112BDE111E00557F4A /* CategoryOperations.swift in Sources */,
 				03998D0D2BDE105100557F4A /* ProfileViewModel.swift in Sources */,
+				03998D752BDF15F600557F4A /* UIImage-Ext.swift in Sources */,
 				03C2903F2BD3693200AE4CC5 /* SearchView.swift in Sources */,
 				03FFC1CD2BDB2A7E000710AF /* CloudKitManager.swift in Sources */,
 				03C2903A2BD3693200AE4CC5 /* V0_Macro.swift in Sources */,
@@ -521,12 +535,14 @@
 				03998D172BDE146D00557F4A /* SceneDelegate.swift in Sources */,
 				03C290372BD3693200AE4CC5 /* RecipeCard.swift in Sources */,
 				03998D092BDE0FCE00557F4A /* RecipeManager.swift in Sources */,
+				03998D792BDF172600557F4A /* ImageDimension.swift in Sources */,
 				03998D032BDE0F6700557F4A /* RecordOperations.swift in Sources */,
 				03C290382BD3693200AE4CC5 /* RecipeExploreView.swift in Sources */,
 				03998D152BDE13E100557F4A /* OnboardView.swift in Sources */,
 				03C290192BD3686000AE4CC5 /* ContentView.swift in Sources */,
 				03998D0B2BDE101100557F4A /* RecipeExploreViewModel.swift in Sources */,
 				03998D072BDE0FB600557F4A /* RecipeManagerEnvironmentKey.swift in Sources */,
+				03998D772BDF16EF00557F4A /* PlaceholderImage.swift in Sources */,
 				03C2903E2BD3693200AE4CC5 /* ProfileView.swift in Sources */,
 				03C290172BD3686000AE4CC5 /* RecipeKitApp.swift in Sources */,
 				03998CF92BDE0D6000557F4A /* CloudKitManagerEnvironmentKey.swift in Sources */,

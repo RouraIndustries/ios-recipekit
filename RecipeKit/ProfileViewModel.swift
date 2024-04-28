@@ -7,6 +7,9 @@
 
 import CloudKit
 import Observation
+import UIKit
+import PhotosUI
+import SwiftUI
 
 extension ProfileView {
     @Observable final class ViewModel {
@@ -18,6 +21,10 @@ extension ProfileView {
         var lastName = ""
 
         var isLoading = false
+        var avatar = PlaceholderImage.avatar
+        var photosPickerItem: PhotosPickerItem? {
+            didSet { loadImage() }
+        }
 
         private var profileContext: ProfileContext = .create
         private var currentUserProfileRecord: CKRecord? {
@@ -137,6 +144,7 @@ extension ProfileView {
 
             profileRecord[V0_Profile.kFirstName] = firstName
             profileRecord[V0_Profile.kLastName] = lastName
+            profileRecord[V0_Profile.kAvatarAsset] = avatar.convertToCKAsset()
 
             return profileRecord
         }
@@ -145,6 +153,17 @@ extension ProfileView {
             let profile = V0_Profile(record: record)
             firstName = profile.profileFirstName
             lastName = profile.profileLastName
+            avatar = profile.profileImage
+        }
+
+        private func loadImage() {
+            Task {
+                if let loadedImage = try? await photosPickerItem?.loadTransferable(type: Data.self) {
+                    avatar = UIImage(data: loadedImage) ?? PlaceholderImage.avatar
+                } else {
+                    //                    Log.info("Failed")
+                }
+            }
         }
 
         private func showLoadingView() { Task { @MainActor in isLoading = true }}

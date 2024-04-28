@@ -26,6 +26,18 @@ struct RecipeDetailsView: View {
                     .minimumScaleFactor(0.75)
                     .multilineTextAlignment(.center)
 
+                recipe.bannerImage
+                    .resizable()
+                    .scaledToFill()
+                    .frame(
+                        minWidth: .zero,
+                        maxWidth: .infinity,
+                        minHeight: .zero,
+                        maxHeight: 180
+                    )
+                    .clipped()
+                    .zIndex(-1.0)
+
                 VStack(spacing: 16.0) {
                     VStack(spacing: 8.0) {
                         if viewModel.mealType.isEmpty == false {
