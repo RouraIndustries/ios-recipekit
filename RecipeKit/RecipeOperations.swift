@@ -5,14 +5,12 @@
 //  Created by Christopher J. Roura on 4/26/24.
 //
 
-import SwiftUI
+import CloudKit
 
-struct RecipeOperations: View {
-    var body: some View {
-        Text("Hello, World!")
-    }
-}
-
-#Preview {
-    RecipeOperations()
+protocol RecipeOperations {
+    func getRecipes() async throws -> [V0_Recipe]
+    func getIngredients(for recipe: V0_Recipe) async throws -> [V0_Ingredient]
+    func getMacros(for recipe: V0_Recipe) async throws -> [V0_Macro]
+    func getNutritionalInformation(for recipe: V0_Recipe) async throws -> [V0_NutritionalInformation]
+    func getStats(for recipe: V0_Recipe) async throws -> [V0_Stat]
 }
