@@ -33,7 +33,7 @@ extension V0_Ingredient {
     }
 }
 
-extension V0_Ingredient {
+extension V0_Ingredient: CKRecordConvertible {
     init(record: CKRecord) {
         ckRecordID = record.recordID
         name = record[Self.kName] as? String ?? ""

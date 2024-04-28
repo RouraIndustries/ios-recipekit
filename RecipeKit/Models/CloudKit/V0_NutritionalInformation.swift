@@ -33,7 +33,7 @@ extension V0_NutritionalInformation {
     }
 }
 
-extension V0_NutritionalInformation {
+extension V0_NutritionalInformation: CKRecordConvertible {
     init(record: CKRecord) {
         ckRecordID = record.recordID
         name = record[Self.kName] as? String ?? ""

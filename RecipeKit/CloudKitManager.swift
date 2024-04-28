@@ -43,39 +43,39 @@ extension CloudKitManager: UserOperations {
     }
 }
 
-    // MARK: - CloudKitManager-RecordOperations
+// MARK: - CloudKitManager-RecordOperations
 
-    extension CloudKitManager: RecordOperations {
-        @MainActor
-        func batchSave(records: [CKRecord]) async throws -> [CKRecord] {
-            do {
-                let (savedResults, _) = try await container.publicCloudDatabase.modifyRecords(saving: records, deleting: [])
-                let savedRecords = savedResults.compactMap { try? $1.get() }
+extension CloudKitManager: RecordOperations {
+    @MainActor
+    func batchSave(records: [CKRecord]) async throws -> [CKRecord] {
+        do {
+            let (savedResults, _) = try await container.publicCloudDatabase.modifyRecords(saving: records, deleting: [])
+            let savedRecords = savedResults.compactMap { try? $1.get() }
 
-                return savedRecords
-            } catch {
-                throw error
-            }
-        }
-
-        @MainActor
-        func save(record: CKRecord) async throws -> CKRecord {
-            do {
-                return try await container.publicCloudDatabase.save(record)
-            } catch {
-                throw error
-            }
-        }
-
-        @MainActor
-        func fetchRecord(with id: CKRecord.ID) async throws -> CKRecord {
-            do {
-                return try await container.publicCloudDatabase.record(for: id)
-            } catch {
-                throw error
-            }
+            return savedRecords
+        } catch {
+            throw error
         }
     }
+
+    @MainActor
+    func save(record: CKRecord) async throws -> CKRecord {
+        do {
+            return try await container.publicCloudDatabase.save(record)
+        } catch {
+            throw error
+        }
+    }
+
+    @MainActor
+    func fetchRecord(with id: CKRecord.ID) async throws -> CKRecord {
+        do {
+            return try await container.publicCloudDatabase.record(for: id)
+        } catch {
+            throw error
+        }
+    }
+}
 
 // MARK: - CloudKitManager-CategoryOperations
 
@@ -215,5 +215,46 @@ extension CloudKitManager: RecipeOperations {
         } catch {
             throw error
         }
+    }
+}
+
+// MARK: - CloudKitManager-Helpers
+
+private extension CloudKitManager {
+    @MainActor
+    func fetchRecords<T: CKRecordConvertible>(
+        with query: CKQuery,
+        sortDescriptors: [NSSortDescriptor],
+        accumulator: [T] = [],
+        currentCursor cursor: CKQueryOperation.Cursor? = nil
+    ) async throws -> [T] {
+        var results = accumulator
+        var queriedRecords: (matchResults: [(CKRecord.ID, Result<CKRecord, Error>)], queryCursor: CKQueryOperation.Cursor?)
+        query.sortDescriptors = sortDescriptors
+
+        if let cursor {
+            queriedRecords = try await container.publicCloudDatabase.records(
+                continuingMatchFrom: cursor,
+                resultsLimit: resultsLimit
+            )
+        } else {
+            queriedRecords = try await container.publicCloudDatabase.records(
+                matching: query,
+                resultsLimit: resultsLimit
+            )
+        }
+
+        let records = queriedRecords.matchResults.compactMap { try? $1.get() }
+        results += records.compactMap(T.init)
+        //        Log.info(cursor == nil ? "1️⃣ results = \(results)" : "⭕️ Next batch of results = \(results)")
+
+        guard let nextCursor = queriedRecords.queryCursor else { return results }
+
+        return try await fetchRecords(
+            with: query,
+            sortDescriptors: sortDescriptors,
+            accumulator: results,
+            currentCursor: nextCursor
+        )
     }
 }

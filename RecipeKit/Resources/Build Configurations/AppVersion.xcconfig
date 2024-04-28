@@ -1,0 +1,12 @@
+//
+//  AppVersion.xcconfig
+//  RecipeKit
+//
+//  Created by Christopher J. Roura on 11/29/23.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+RK_APP_VERSION = 2.1.2
+RK_BUNDLE_VERSION = 16

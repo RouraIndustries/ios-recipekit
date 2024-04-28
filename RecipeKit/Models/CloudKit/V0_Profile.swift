@@ -65,7 +65,7 @@ extension V0_Profile {
 
 // MARK: - V0_Profile - initializer
 
-extension V0_Profile {
+extension V0_Profile: CKRecordConvertible {
     init(record: CKRecord) {
         ckRecordID = record.recordID
         firstName = record[Self.kFirstName] as? String ?? "No first name"
