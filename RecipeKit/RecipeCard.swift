@@ -6,20 +6,21 @@
 //
 
 import SwiftUI
+import CloudKit
 
 struct RecipeCard: View {
-    let item: Int
+    let recipe: V0_Recipe
 
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             Color.gray
 
             VStack(alignment: .leading, spacing: 8.0) {
-                Text("Recipe \(item)")
+                Text("Recipe")
                     .font(.headline)
                     .fontWeight(.bold)
 
-                Text("Recipe \(item)")
+                Text("Recipe")
                     .font(.subheadline)
             }
             .frame(height: 78)
@@ -35,5 +36,5 @@ struct RecipeCard: View {
 }
 
 #Preview {
-    RecipeCard(item: 0)
+    RecipeCard(recipe: V0_Recipe(record: CKRecord(recordType: RecordType.recipe)))
 }

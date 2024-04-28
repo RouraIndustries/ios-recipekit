@@ -11,7 +11,7 @@ enum RecordType {
     static let profile = "V0_Profile"
     static let recipe = "V0_Recipe"
 
-    static let category = "V0_Category"
+    static let cuisineType = "V0_CuisineType"
     static let mealType = "V0_MealType"
 
     static let ingredient = "V0_Ingredient"

@@ -17,7 +17,7 @@ struct V0_Recipe {
     let tipsAndVariations: [String]?
     let squareAsset: CKAsset?
     let bannerAsset: CKAsset?
-    let category: CKRecord.Reference?
+    let cuisineType: CKRecord.Reference?
     let mealType: CKRecord.Reference?
     let stat: CKRecord.Reference?
     let ingredient: CKRecord.Reference?
@@ -32,7 +32,7 @@ extension V0_Recipe {
     static let kSquareAsset = "squareAsset"
     static let kBannerAsset = "bannerAsset"
 
-    static let kCategory = "category"
+    static let kCuisineType = "cuisineType"
     static let kMealType = "mealType"
     static let kStat = "stat"
     static let kIngredient = "ingredient"
@@ -71,7 +71,7 @@ extension V0_Recipe: CKRecordConvertible {
         squareAsset = record[Self.kSquareAsset] as? CKAsset
         bannerAsset = record[Self.kBannerAsset] as? CKAsset
 
-        category = record[Self.kCategory] as? CKRecord.Reference
+        cuisineType = record[Self.kCuisineType] as? CKRecord.Reference
         mealType = record[Self.kMealType] as? CKRecord.Reference
         stat = record[Self.kStat] as? CKRecord.Reference
         ingredient = record[Self.kIngredient] as? CKRecord.Reference

@@ -85,7 +85,7 @@ extension CloudKitManager: CategoryOperations {
         //        Log.info("✅ Network call fired off")
 
         let alphabeticalSortDescriptor = NSSortDescriptor(key: V0_CuisineType.kType, ascending: true)
-        let query = CKQuery(recordType: RecordType.category, predicate: NSPredicate(value: true))
+        let query = CKQuery(recordType: RecordType.cuisineType, predicate: NSPredicate(value: true))
 
         do {
             return try await fetchRecords(with: query, sortDescriptors: [alphabeticalSortDescriptor])
