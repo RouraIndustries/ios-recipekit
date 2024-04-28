@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03998CF92BDE0D6000557F4A /* CloudKitManagerEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03998CF82BDE0D6000557F4A /* CloudKitManagerEnvironmentKey.swift */; };
 		039BD5E22BDAE76C0030190D /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039BD5E02BDAE76C0030190D /* Macro.swift */; };
 		039BD5E92BDAE78F0030190D /* V0_Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039BD5E72BDAE78F0030190D /* V0_Recipe.swift */; };
 		039BD5EA2BDAE78F0030190D /* V0_Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039BD5E82BDAE78F0030190D /* V0_Profile.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03998CF82BDE0D6000557F4A /* CloudKitManagerEnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManagerEnvironmentKey.swift; sourceTree = "<group>"; };
 		039BD5E02BDAE76C0030190D /* Macro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
 		039BD5E72BDAE78F0030190D /* V0_Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V0_Recipe.swift; sourceTree = "<group>"; };
 		039BD5E82BDAE78F0030190D /* V0_Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V0_Profile.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				03C290292BD368EE00AE4CC5 /* RecipeCarouselView.swift */,
 				03C290282BD368EA00AE4CC5 /* RecipeExplorerView.swift */,
 				03C2902F2BD3690C00AE4CC5 /* SearchView.swift */,
+				03998CF82BDE0D6000557F4A /* CloudKitManagerEnvironmentKey.swift */,
 				03FFC1CC2BDB2A7E000710AF /* CloudKitManager.swift */,
 				039BD5DC2BDAE6B90030190D /* Models */,
 				03C2901A2BD3686200AE4CC5 /* Assets.xcassets */,
@@ -271,6 +274,7 @@
 				03C290192BD3686000AE4CC5 /* ContentView.swift in Sources */,
 				03C2903E2BD3693200AE4CC5 /* ProfileView.swift in Sources */,
 				03C290172BD3686000AE4CC5 /* RecipeKitApp.swift in Sources */,
+				03998CF92BDE0D6000557F4A /* CloudKitManagerEnvironmentKey.swift in Sources */,
 				039BD5E92BDAE78F0030190D /* V0_Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
