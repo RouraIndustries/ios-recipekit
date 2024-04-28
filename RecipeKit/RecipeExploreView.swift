@@ -43,7 +43,7 @@ struct RecipeExplorerView: View {
                 Text(category)
             }
             .navigationDestination(for: V0_Recipe.self) { recipe in
-                Text(recipe.recipeTitle)
+                RecipeDetailsView(recipe: recipe)
             }
         }
     }
