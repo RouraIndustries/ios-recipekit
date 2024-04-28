@@ -25,9 +25,10 @@ struct CuisineTypeRecipesListView: View {
                     .buttonStyle(.plain)
                 }
             }
-            .padding(.horizontal, 16.0)
-            .padding(.vertical, 4.0)
+            .scrollTargetLayout()
         }
+        .contentMargins(.horizontal, 16.0, for: .scrollContent)
+        .scrollTargetBehavior(.viewAligned)
     }
 }
 

@@ -58,6 +58,11 @@ extension V0_Profile {
         set { bio = newValue }
     }
 
+    var profileImage: UIImage {
+        get { avatarAsset?.convertToUIImage(in: .square) ?? PlaceholderImage.avatar }
+        set { avatarAsset = newValue.convertToCKAsset() }
+    }
+
     var profileJoinedOnDate: Date {
         get { joinedOnDate ?? .now }
     }

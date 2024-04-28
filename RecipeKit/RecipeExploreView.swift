@@ -21,7 +21,10 @@ struct RecipeExploreView: View {
                 LazyVStack(spacing: 12.0) {
                     ForEach(recipeManager.cuisineTypes) { cuisineType in
                         Section {
-                            RecipeCarouselView(recipes: viewModel.recipesForCuisineType(cuisineType))
+                            RecipeCarouselView(
+                                style: cuisineType.id == recipeManager.cuisineTypes.last?.id ? .list : .carousel,
+                                recipes: viewModel.recipesForCuisineType(cuisineType)
+                            )
                         } header: {
                             NavigationLink(value: cuisineType) {
                                 HStack {
