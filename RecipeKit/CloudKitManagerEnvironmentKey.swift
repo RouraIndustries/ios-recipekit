@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct CloudKitManagerEnvironmentKey: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+private struct CloudKitManagerEnvironmentKey: EnvironmentKey {
+    static var defaultValue = CloudKitManager()
 }
 
-#Preview {
-    CloudKitManagerEnvironmentKey()
+extension EnvironmentValues {
+    var cloudKitManager: CloudKitManager {
+        get { self[CloudKitManagerEnvironmentKey.self] }
+        set { self[CloudKitManagerEnvironmentKey.self] = newValue }
+    }
 }

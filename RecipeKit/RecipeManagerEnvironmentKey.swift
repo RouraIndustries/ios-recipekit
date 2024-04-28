@@ -5,7 +5,7 @@
 //  Created by Christopher J. Roura on 4/26/24.
 //
 
-import CloudKit
+import SwiftUI
 
 private struct RecipeManagerEnvironmentKey: EnvironmentKey {
     static var defaultValue = RecipeManager()

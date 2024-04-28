@@ -36,6 +36,7 @@
 		03998D532BDE190F00557F4A /* RecipeKit_UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03998D522BDE190F00557F4A /* RecipeKit_UITestsLaunchTests.swift */; };
 		03998D6E2BDF11E600557F4A /* RecipeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03998D6D2BDF11E600557F4A /* RecipeDetailsViewModel.swift */; };
 		03998D702BDF11F800557F4A /* RecipeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03998D6F2BDF11F800557F4A /* RecipeDetailsView.swift */; };
+		03998D722BDF12C700557F4A /* CuisineTypeRecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03998D712BDF12C700557F4A /* CuisineTypeRecipeListView.swift */; };
 		039BD5E22BDAE76C0030190D /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039BD5E02BDAE76C0030190D /* Macro.swift */; };
 		039BD5E92BDAE78F0030190D /* V0_Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039BD5E72BDAE78F0030190D /* V0_Recipe.swift */; };
 		039BD5EA2BDAE78F0030190D /* V0_Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039BD5E82BDAE78F0030190D /* V0_Profile.swift */; };
@@ -112,6 +113,7 @@
 		03998D522BDE190F00557F4A /* RecipeKit_UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeKit_UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		03998D6D2BDF11E600557F4A /* RecipeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewModel.swift; sourceTree = "<group>"; };
 		03998D6F2BDF11F800557F4A /* RecipeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsView.swift; sourceTree = "<group>"; };
+		03998D712BDF12C700557F4A /* CuisineTypeRecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuisineTypeRecipeListView.swift; sourceTree = "<group>"; };
 		039BD5E02BDAE76C0030190D /* Macro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
 		039BD5E72BDAE78F0030190D /* V0_Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V0_Recipe.swift; sourceTree = "<group>"; };
 		039BD5E82BDAE78F0030190D /* V0_Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V0_Profile.swift; sourceTree = "<group>"; };
@@ -168,7 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				03C2901A2BD3686200AE4CC5 /* Assets.xcassets */,
-				03C290302BD3690E00AE4CC5 /* Info.plist */,
+				03C2901D2BD3686200AE4CC5 /* Preview Content */,
+				03998D732BDF142600557F4A /* PropertyLists */,
 				03998D322BDE176C00557F4A /* Build Configurations */,
 				03998D3C2BDE189C00557F4A /* Entitlements */,
 			);
@@ -213,6 +216,14 @@
 				03998D522BDE190F00557F4A /* RecipeKit_UITestsLaunchTests.swift */,
 			);
 			path = "RecipeKit-UITests";
+			sourceTree = "<group>";
+		};
+		03998D732BDF142600557F4A /* PropertyLists */ = {
+			isa = PBXGroup;
+			children = (
+				03C290302BD3690E00AE4CC5 /* Info.plist */,
+			);
+			path = PropertyLists;
 			sourceTree = "<group>";
 		};
 		039BD5DC2BDAE6B90030190D /* Models */ = {
@@ -296,6 +307,7 @@
 				03998D0A2BDE101100557F4A /* RecipeExploreViewModel.swift */,
 				03998D6F2BDF11F800557F4A /* RecipeDetailsView.swift */,
 				03998D6D2BDF11E600557F4A /* RecipeDetailsViewModel.swift */,
+				03998D712BDF12C700557F4A /* CuisineTypeRecipeListView.swift */,
 				03C2902F2BD3690C00AE4CC5 /* SearchView.swift */,
 				03998D1A2BDE15C900557F4A /* CKRecordConvertible.swift */,
 				03998D102BDE111E00557F4A /* CategoryOperations.swift */,
@@ -312,7 +324,6 @@
 				03998CFC2BDE0F0C00557F4A /* View-Ext.swift */,
 				03998D2B2BDE174400557F4A /* Resources */,
 				039BD5DC2BDAE6B90030190D /* Models */,
-				03C2901D2BD3686200AE4CC5 /* Preview Content */,
 			);
 			path = RecipeKit;
 			sourceTree = "<group>";
@@ -368,7 +379,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03C290222BD3686200AE4CC5 /* Build configuration list for PBXNativeTarget "RecipeKit" */;
 			buildPhases = (
-				0346FACD2BD7259D00A104BD /* ShellScript */,
 				03C2900F2BD3686000AE4CC5 /* Sources */,
 				03C290102BD3686000AE4CC5 /* Frameworks */,
 				03C290112BD3686000AE4CC5 /* Resources */,
@@ -457,26 +467,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		0346FACD2BD7259D00A104BD /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nPATH=/opt/homebrew/bin:$PATH\nif [ -f ~/com.raywenderlich.swiftlint.yml ]; then\n  if which swiftlint >/dev/null; then\n    swiftlint --no-cache --config ~/com.raywenderlich.swiftlint.yml\n  fi\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		03998D3D2BDE18FC00557F4A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -510,6 +500,7 @@
 				03998D1B2BDE15C900557F4A /* CKRecordConvertible.swift in Sources */,
 				039BD5EE2BDAED980030190D /* Cuisine.swift in Sources */,
 				03C290392BD3693200AE4CC5 /* RecipeCarouselView.swift in Sources */,
+				03998D722BDF12C700557F4A /* CuisineTypeRecipeListView.swift in Sources */,
 				03998CFF2BDE0F2F00557F4A /* SafeAreaButtonGradient.swift in Sources */,
 				03C290412BD3693200AE4CC5 /* V0_Ingredient.swift in Sources */,
 				03C290422BD3693200AE4CC5 /* V0_NutritionalInformation.swift in Sources */,
@@ -632,12 +623,12 @@
 				CODE_SIGN_ENTITLEMENTS = "${RK_ENTITLEMENTS}";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RecipeKit/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RecipeKit/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = F24984C6SB;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RecipeKit/Info.plist;
+				INFOPLIST_FILE = RecipeKit/Resources/PropertyLists/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -771,12 +762,12 @@
 				CODE_SIGN_ENTITLEMENTS = "${RK_ENTITLEMENTS}";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RecipeKit/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RecipeKit/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = F24984C6SB;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RecipeKit/Info.plist;
+				INFOPLIST_FILE = RecipeKit/Resources/PropertyLists/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -911,12 +902,12 @@
 				CODE_SIGN_ENTITLEMENTS = "${RK_ENTITLEMENTS}";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RecipeKit/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RecipeKit/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = F24984C6SB;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RecipeKit/Info.plist;
+				INFOPLIST_FILE = RecipeKit/Resources/PropertyLists/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -1059,12 +1050,12 @@
 				CODE_SIGN_ENTITLEMENTS = "${RK_ENTITLEMENTS}";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RecipeKit/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RecipeKit/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = F24984C6SB;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RecipeKit/Info.plist;
+				INFOPLIST_FILE = RecipeKit/Resources/PropertyLists/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
