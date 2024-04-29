@@ -58,7 +58,6 @@ extension V0_Macro: Hashable {
     }
 }
 
-
 extension V0_Macro: Identifiable {
     var id: String { ckRecordID.recordName }
 }

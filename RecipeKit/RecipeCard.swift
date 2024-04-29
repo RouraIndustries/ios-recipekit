@@ -53,7 +53,7 @@ struct RecipeCard: View {
         .frame(width: 220, height: 204)
         .clipShape(.rect(cornerRadius: 16.0))
         .padding(.bottom, 16.0)
-        .shadow(color: Color(red: 23/255, green: 27/255, blue: 31/255, opacity: 0.16), radius: 8, y: 4)
+        .shadow(color: Color(red: 23 / 255, green: 27 / 255, blue: 31 / 255, opacity: 0.16), radius: 8, y: 4)
     }
 
     var standard: some View {
@@ -83,7 +83,7 @@ struct RecipeCard: View {
         .frame(width: 220, height: 204)
         .clipShape(.rect(cornerRadius: 16.0))
         .padding(.bottom, 16.0)
-        .shadow(color: Color(red: 23/255, green: 27/255, blue: 31/255, opacity: 0.16), radius: 8, y: 4)
+        .shadow(color: Color(red: 23 / 255, green: 27 / 255, blue: 31 / 255, opacity: 0.16), radius: 8, y: 4)
     }
 
     var large: some View {
@@ -114,7 +114,7 @@ struct RecipeCard: View {
         .frame(height: 320)
         .clipShape(.rect(cornerRadius: 16.0))
         .padding(.bottom, 16.0)
-        .shadow(color: Color(red: 23/255, green: 27/255, blue: 31/255, opacity: 0.16), radius: 8, y: 4)
+        .shadow(color: Color(red: 23 / 255, green: 27 / 255, blue: 31 / 255, opacity: 0.16), radius: 8, y: 4)
     }
 }
 

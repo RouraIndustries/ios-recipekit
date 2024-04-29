@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import RouraFoundation
 
 @main
 struct RecipeKitApp: App {
@@ -43,8 +44,8 @@ struct RecipeKitApp: App {
     }
 
     init() {
-        // Print the URL location for the SQLite database created by SwiftData.
+        // Log the URL location for the SQLite database created by SwiftData.
         // This directory typically holds the application's support files.
-        print(URL.applicationSupportDirectory.path(percentEncoded: false))
+        Log.info(URL.applicationSupportDirectory.path(percentEncoded: false))
     }
 }
