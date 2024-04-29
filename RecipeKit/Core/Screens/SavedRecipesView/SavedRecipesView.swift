@@ -1,5 +1,5 @@
 //
-//  SearchView.swift
+//  SavedRecipesView.swift
 //  RecipeKit
 //
 //  Created by Christopher J. Roura on 4/17/24.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct SearchView: View {
+struct SavedRecipesView: View {
     var body: some View {
-        Text("Search")
+        Text("SavedRecipes")
     }
 }
 
 #Preview {
-    SearchView()
+    SavedRecipesView()
 }

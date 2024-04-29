@@ -13,8 +13,8 @@ struct AppTabView: View {
             RecipeExploreView()
                 .tabItem { Label("Home", systemImage: "house") }
 
-            SearchView()
-                .tabItem { Label("Search", systemImage: "magnifyingglass") }
+            SavedRecipesView()
+                .tabItem { Label("Saved Recipes", systemImage: "star") }
 
             ProfileView()
                 .tabItem { Label("Profile", systemImage: "person") }

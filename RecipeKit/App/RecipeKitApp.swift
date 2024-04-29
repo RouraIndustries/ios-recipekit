@@ -37,7 +37,7 @@ struct RecipeKitApp: App {
         // Define the main scene of the app.
         WindowGroup {
             // ContentView is the entry point of the app's user interface.
-            ContentView()
+            RootView()
         }
         // Attach the sharedModelContainer to the scene.
         .modelContainer(sharedModelContainer)
