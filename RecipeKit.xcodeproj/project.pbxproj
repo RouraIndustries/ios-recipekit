@@ -41,6 +41,9 @@
 		03998D772BDF16EF00557F4A /* PlaceholderImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03998D762BDF16EF00557F4A /* PlaceholderImage.swift */; };
 		03998D792BDF172600557F4A /* ImageDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03998D782BDF172600557F4A /* ImageDimension.swift */; };
 		03998D7B2BDF175500557F4A /* CKAsset-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03998D7A2BDF175500557F4A /* CKAsset-Ext.swift */; };
+		03998D7E2BDF1A6B00557F4A /* RouraFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 03998D7D2BDF1A6B00557F4A /* RouraFoundation */; };
+		03998D802BDF1A6B00557F4A /* RouraSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 03998D7F2BDF1A6B00557F4A /* RouraSwiftUI */; };
+		03998D822BDF1A6B00557F4A /* Tuxedo in Frameworks */ = {isa = PBXBuildFile; productRef = 03998D812BDF1A6B00557F4A /* Tuxedo */; };
 		039BD5E22BDAE76C0030190D /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039BD5E02BDAE76C0030190D /* Macro.swift */; };
 		039BD5E92BDAE78F0030190D /* V0_Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039BD5E72BDAE78F0030190D /* V0_Recipe.swift */; };
 		039BD5EA2BDAE78F0030190D /* V0_Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039BD5E82BDAE78F0030190D /* V0_Profile.swift */; };
@@ -168,6 +171,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03998D802BDF1A6B00557F4A /* RouraSwiftUI in Frameworks */,
+				03998D7E2BDF1A6B00557F4A /* RouraFoundation in Frameworks */,
+				03998D822BDF1A6B00557F4A /* Tuxedo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +406,11 @@
 			dependencies = (
 			);
 			name = RecipeKit;
+			packageProductDependencies = (
+				03998D7D2BDF1A6B00557F4A /* RouraFoundation */,
+				03998D7F2BDF1A6B00557F4A /* RouraSwiftUI */,
+				03998D812BDF1A6B00557F4A /* Tuxedo */,
+			);
 			productName = RecipeKit;
 			productReference = 03C290132BD3686000AE4CC5 /* RecipeKit.app */;
 			productType = "com.apple.product-type.application";
@@ -436,6 +447,9 @@
 				Base,
 			);
 			mainGroup = 03C2900A2BD3686000AE4CC5;
+			packageReferences = (
+				03998D7C2BDF1A6B00557F4A /* XCRemoteSwiftPackageReference "ios-shared" */,
+			);
 			productRefGroup = 03C290142BD3686000AE4CC5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1187,6 +1201,35 @@
 			defaultConfigurationName = Dev;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		03998D7C2BDF1A6B00557F4A /* XCRemoteSwiftPackageReference "ios-shared" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:RouraIndustries/ios-shared.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		03998D7D2BDF1A6B00557F4A /* RouraFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03998D7C2BDF1A6B00557F4A /* XCRemoteSwiftPackageReference "ios-shared" */;
+			productName = RouraFoundation;
+		};
+		03998D7F2BDF1A6B00557F4A /* RouraSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03998D7C2BDF1A6B00557F4A /* XCRemoteSwiftPackageReference "ios-shared" */;
+			productName = RouraSwiftUI;
+		};
+		03998D812BDF1A6B00557F4A /* Tuxedo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03998D7C2BDF1A6B00557F4A /* XCRemoteSwiftPackageReference "ios-shared" */;
+			productName = Tuxedo;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 03C2900B2BD3686000AE4CC5 /* Project object */;
 }

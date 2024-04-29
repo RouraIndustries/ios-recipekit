@@ -1,0 +1,15 @@
+{
+  "originHash" : "a23ef613b01d3ed22b2d7c811180332af14753094247722f3406a1091623fac6",
+  "pins" : [
+    {
+      "identity" : "ios-shared",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:RouraIndustries/ios-shared.git",
+      "state" : {
+        "revision" : "266dd15a1f937fba6c781562898e4560e56288b4",
+        "version" : "1.3.2"
+      }
+    }
+  ],
+  "version" : 3
+}
