@@ -451,6 +451,7 @@
 			);
 			mainGroup = 03C2900A2BD3686000AE4CC5;
 			packageReferences = (
+				03998D862BDF1F1500557F4A /* XCRemoteSwiftPackageReference "SwiftLint" */,
 				03998D7C2BDF1A6B00557F4A /* XCRemoteSwiftPackageReference "ios-shared" */,
 				03998D832BDF1D0400557F4A /* XCRemoteSwiftPackageReference "ios-client-sdk" */,
 			);
@@ -1207,6 +1208,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		03998D862BDF1F1500557F4A /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:realm/SwiftLint.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.54.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 		03998D7C2BDF1A6B00557F4A /* XCRemoteSwiftPackageReference "ios-shared" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:RouraIndustries/ios-shared.git";
