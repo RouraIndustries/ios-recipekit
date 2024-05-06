@@ -8,6 +8,7 @@
 import CloudKit
 import Observation
 import SwiftUI
+import RouraFoundation
 
 @Observable final class CloudKitManager {
     var userRecord: CKRecord?
@@ -28,8 +29,7 @@ import SwiftUI
 // MARK: - CloudKitManager-UserOperations
 
 extension CloudKitManager: UserOperations {
-    @MainActor
-    func getUserRecord() async throws {
+    @MainActor func getUserRecord() async throws {
         do {
             let recordID = try await container.userRecordID()
             let record = try await container.publicCloudDatabase.record(for: recordID)
@@ -46,8 +46,7 @@ extension CloudKitManager: UserOperations {
 // MARK: - CloudKitManager-RecordOperations
 
 extension CloudKitManager: RecordOperations {
-    @MainActor
-    func batchSave(records: [CKRecord]) async throws -> [CKRecord] {
+    @MainActor func batchSave(records: [CKRecord]) async throws -> [CKRecord] {
         do {
             let (savedResults, _) = try await container.publicCloudDatabase.modifyRecords(saving: records, deleting: [])
             let savedRecords = savedResults.compactMap { try? $1.get() }
@@ -58,8 +57,7 @@ extension CloudKitManager: RecordOperations {
         }
     }
 
-    @MainActor
-    func save(record: CKRecord) async throws -> CKRecord {
+    @MainActor func save(record: CKRecord) async throws -> CKRecord {
         do {
             return try await container.publicCloudDatabase.save(record)
         } catch {
@@ -67,8 +65,7 @@ extension CloudKitManager: RecordOperations {
         }
     }
 
-    @MainActor
-    func fetchRecord(with id: CKRecord.ID) async throws -> CKRecord {
+    @MainActor func fetchRecord(with id: CKRecord.ID) async throws -> CKRecord {
         do {
             return try await container.publicCloudDatabase.record(for: id)
         } catch {
@@ -80,9 +77,8 @@ extension CloudKitManager: RecordOperations {
 // MARK: - CloudKitManager-CategoryOperations
 
 extension CloudKitManager: CategoryOperations {
-    @MainActor
-    func getCuisineTypes() async throws -> [V0_CuisineType] {
-        //        Log.info("✅ Network call fired off")
+    @MainActor func getCuisineTypes() async throws -> [V0_CuisineType] {
+                Log.info("✅ Network call fired off")
 
         let alphabeticalSortDescriptor = NSSortDescriptor(key: V0_CuisineType.kType, ascending: true)
         let query = CKQuery(recordType: RecordType.cuisineType, predicate: NSPredicate(value: true))
@@ -94,9 +90,8 @@ extension CloudKitManager: CategoryOperations {
         }
     }
 
-    @MainActor
-    func getMealTypes() async throws -> [V0_MealType] {
-        //        Log.info("✅ Network call fired off")
+    @MainActor func getMealTypes() async throws -> [V0_MealType] {
+                Log.info("✅ Network call fired off")
 
         let alphabeticalSortDescriptor = NSSortDescriptor(key: V0_MealType.kType, ascending: true)
         let query = CKQuery(recordType: RecordType.mealType, predicate: NSPredicate(value: true))
@@ -108,9 +103,8 @@ extension CloudKitManager: CategoryOperations {
         }
     }
 
-    @MainActor
-    func getMacros() async throws -> [V0_Macro] {
-        //        Log.info("✅ Network call fired off")
+    @MainActor func getMacros() async throws -> [V0_Macro] {
+                Log.info("✅ Network call fired off")
 
         let alphabeticalSortDescriptor = NSSortDescriptor(key: V0_Macro.kName, ascending: true)
         let query = CKQuery(recordType: RecordType.macro, predicate: NSPredicate(value: true))
@@ -122,9 +116,8 @@ extension CloudKitManager: CategoryOperations {
         }
     }
 
-    @MainActor
-    func getIngredients() async throws -> [V0_Ingredient] {
-        //        Log.info("✅ Network call fired off")
+    @MainActor func getIngredients() async throws -> [V0_Ingredient] {
+                Log.info("✅ Network call fired off")
 
         let alphabeticalSortDescriptor = NSSortDescriptor(key: V0_Ingredient.kName, ascending: true)
         let query = CKQuery(recordType: RecordType.ingredient, predicate: NSPredicate(value: true))
@@ -140,9 +133,8 @@ extension CloudKitManager: CategoryOperations {
 // MARK: - CloudKitManager-RecipeOperations
 
 extension CloudKitManager: RecipeOperations {
-    @MainActor
-    func getRecipes() async throws -> [V0_Recipe] {
-        //        Log.info("✅ Network call fired off")
+    @MainActor func getRecipes() async throws -> [V0_Recipe] {
+                Log.info("✅ Network call fired off")
 
         let alphabeticalSortDescriptor = NSSortDescriptor(key: V0_Recipe.kTitle, ascending: true)
         let query = CKQuery(recordType: RecordType.recipe, predicate: NSPredicate(value: true))
@@ -154,9 +146,8 @@ extension CloudKitManager: RecipeOperations {
         }
     }
 
-    @MainActor
-    func getIngredients(for recipe: V0_Recipe) async throws -> [V0_Ingredient] {
-        //        Log.info("✅ Network call fired off")
+    @MainActor func getIngredients(for recipe: V0_Recipe) async throws -> [V0_Ingredient] {
+                Log.info("✅ Network call fired off")
 
         let alphabeticalSortDescriptor = NSSortDescriptor(key: V0_Ingredient.kName, ascending: true)
         let predicate = NSPredicate(format: "recipe == %@", recipe.ckRecordID)
@@ -169,9 +160,8 @@ extension CloudKitManager: RecipeOperations {
         }
     }
 
-    @MainActor
-    func getMacros(for recipe: V0_Recipe) async throws -> [V0_Macro] {
-        //        Log.info("✅ Network call fired off")
+    @MainActor func getMacros(for recipe: V0_Recipe) async throws -> [V0_Macro] {
+                Log.info("✅ Network call fired off")
 
         let alphabeticalSortDescriptor = NSSortDescriptor(key: V0_Macro.kName, ascending: true)
         let predicate = NSPredicate(format: "recipe == %@", recipe.ckRecordID)
@@ -184,9 +174,8 @@ extension CloudKitManager: RecipeOperations {
         }
     }
 
-    @MainActor
-    func getNutritionalInformation(for recipe: V0_Recipe) async throws -> [V0_NutritionalInformation] {
-        //        Log.info("✅ Network call fired off")
+    @MainActor func getNutritionalInformation(for recipe: V0_Recipe) async throws -> [V0_NutritionalInformation] {
+                Log.info("✅ Network call fired off")
 
         let alphabeticalSortDescriptor = NSSortDescriptor(key: V0_NutritionalInformation.kName, ascending: true)
         let predicate = NSPredicate(format: "recipe == %@", recipe.ckRecordID)
@@ -199,12 +188,11 @@ extension CloudKitManager: RecipeOperations {
         }
     }
 
-    @MainActor
     /// This function `getStats` takes in a recipe and will provide the stat information including the preparation time, cook time and serving size.
     /// - Parameter recipe: This is the parameter of type RKRecipe which is a recipe within RecipeKit.
     /// - Returns: Will provide an array of `RKStat` which will include detailed statistics about the recipe.
-    func getStats(for recipe: V0_Recipe) async throws -> [V0_Stat] {
-        //        Log.info("✅ Network call fired off")
+    @MainActor func getStats(for recipe: V0_Recipe) async throws -> [V0_Stat] {
+                Log.info("✅ Network call fired off")
 
         let alphabeticalSortDescriptor = NSSortDescriptor(key: V0_Stat.kName, ascending: true)
         let predicate = NSPredicate(format: "recipe == %@", recipe.ckRecordID)
@@ -221,8 +209,7 @@ extension CloudKitManager: RecipeOperations {
 // MARK: - CloudKitManager-Helpers
 
 private extension CloudKitManager {
-    @MainActor
-    func fetchRecords<T: CKRecordConvertible>(
+    @MainActor func fetchRecords<T: CKRecordConvertible>(
         with query: CKQuery,
         sortDescriptors: [NSSortDescriptor],
         accumulator: [T] = [],
@@ -246,7 +233,7 @@ private extension CloudKitManager {
 
         let records = queriedRecords.matchResults.compactMap { try? $1.get() }
         results += records.compactMap(T.init)
-        //        Log.info(cursor == nil ? "1️⃣ results = \(results)" : "⭕️ Next batch of results = \(results)")
+                Log.info(cursor == nil ? "1️⃣ results = \(results)" : "⭕️ Next batch of results = \(results)")
 
         guard let nextCursor = queriedRecords.queryCursor else { return results }
 

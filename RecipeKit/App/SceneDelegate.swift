@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RouraFoundation
 
 class SceneDelegate: NSObject, UIWindowSceneDelegate {
     var window: UIWindow?
@@ -13,7 +14,7 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard (scene as? UIWindowScene) != nil else { return }
         UIApplication.shared.isIdleTimerDisabled = true
-        //        Log.info("SceneDelegate is connected!")
+        Log.info("SceneDelegate is connected!")
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
