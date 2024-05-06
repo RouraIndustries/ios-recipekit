@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import Tuxedo
 
 struct RecipeExploreView: View {
+    static let tag: String? = String(describing: Self.self)
     @Environment(\.recipeManager) private var recipeManager
     @Environment(\.cloudKitManager) private var cloudKitManager
 
@@ -29,23 +31,38 @@ struct RecipeExploreView: View {
                             NavigationLink(value: cuisineType) {
                                 HStack {
                                     Text(cuisineType.cuisineType.rawValue)
+                                        .tuxedoFont(.h5Bold)
+                                        .foregroundStyle(.foregroundPrimary)
 
                                     Spacer()
 
                                     HStack(spacing: 2.0) {
                                         Text("See all")
+
                                         Image(systemName: "chevron.right")
                                             .resizable()
                                             .scaledToFit()
                                             .frame(width: 8, height: 8)
                                             .fontWeight(.bold)
                                     }
+                                    .tuxedoFont(.captionExtraBold)
+                                    .foregroundStyle(.midnightPrimary)
                                 }
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.horizontal, 16.0)
                         }
                     }
+                }
+            }
+            .padding(.vertical, 12.0)
+            .background(.backgroundPrimary)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Text("Explore")
+                        .tuxedoFont(.h4)
+                        .foregroundStyle(.foregroundPrimary)
                 }
             }
             .task {
@@ -55,6 +72,7 @@ struct RecipeExploreView: View {
             }
             .refreshable { await viewModel.fetchDataTaskGroup() }
             .overlay { if viewModel.isLoading { LoadingView() }}
+            .alert($viewModel.error)
             .navigationDestination(for: V0_CuisineType.self) { cuisineType in
                 CuisineTypeRecipeListView(cuisineType: cuisineType, recipes: viewModel.recipesForCuisineType(cuisineType))
             }
