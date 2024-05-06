@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Tuxedo
 
 struct Onboard: Identifiable {
     let id = UUID()
@@ -59,20 +60,28 @@ struct OnboardView: View {
             .safeAreaInset(edge: .bottom) {
                 Button { dismiss() } label: {
                     Text("Continue")
-                        .frame(width: 320, height: 50)
-                        .clipShape(.rect(cornerRadius: 12.0))
+                        .tuxedoFont(.h5Bold)
+                        .foregroundStyle(.whitePrimary)
+                        .frame(width: 280, height: 50)
+                        .background(.midnightPrimary)
+                        .clipShape(.rect(cornerRadius: 8.0))
                 }
-                .padding(.horizontal, 16.0)
-                .padding(.vertical, 16.0)
+                .padding(.vertical, 12.0)
+                .frame(maxWidth: .infinity)
+                .applySafeAreaGradient()
             }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button { dismiss() } label: {
                         Image(systemName: "xmark.circle.fill")
                             .resizable()
-                            .frame(width: 24.0, height: 24.0)
-                            .frame(width: 50.0, height: 50.0, alignment: .leading)
+                            .symbolRenderingMode(.hierarchical)
+                            .scaledToFit()
+                            .frame(width: 24, height: 24)
+                            .foregroundStyle(.midnightPrimary)
+                            .fontWeight(.bold)
                     }
+                    .frame(width: 34, height: 50, alignment: .leading)
                 }
             }
         }
