@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import Tuxedo
 
 struct SafeAreaButtonGradient: View {
     var body: some View {
         LinearGradient(
             colors: [
-                Color(.systemBackground).opacity(0.15),
-                Color(.systemBackground)
+                Color.backgroundPrimary.opacity(0.8),
+                Color.backgroundPrimary
             ],
             startPoint: .top,
             endPoint: .bottom
