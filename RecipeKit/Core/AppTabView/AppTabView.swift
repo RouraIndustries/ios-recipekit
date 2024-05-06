@@ -6,19 +6,41 @@
 //
 
 import SwiftUI
+import Tuxedo
 
 struct AppTabView: View {
+    @SceneStorage("tabSelection") private var tabSelection: String?
+
     var body: some View {
-        TabView {
+        TabView(selection: $tabSelection) {
             RecipeExploreView()
-                .tabItem { Label("Home", systemImage: "house") }
+                .tag(RecipeExploreView.tag)
+                .tabItem {
+                    Label { Text("Recipes") } icon: {
+                        Image(systemName: "house")
+                            .environment(\.symbolVariants, (tabSelection == RecipeExploreView.tag || tabSelection == nil) ? .fill : .none)
+                    }
+                }
 
             SavedRecipesView()
-                .tabItem { Label("Saved Recipes", systemImage: "star") }
+                .tag(SavedRecipesView.tag)
+                .tabItem {
+                    Label { Text("Saved Recipes") } icon: {
+                        Image(systemName: "star")
+                            .environment(\.symbolVariants, tabSelection == SavedRecipesView.tag ? .fill : .none)
+                    }
+                }
 
             ProfileView()
-                .tabItem { Label("Profile", systemImage: "person") }
+                .tag(ProfileView.tag)
+                .tabItem {
+                    Label { Text("Profile") } icon: {
+                        Image(systemName: "person")
+                            .environment(\.symbolVariants, tabSelection == ProfileView.tag ? .fill : .none)
+                    }
+                }
         }
+        .tint(.midnightPrimary)
     }
 }
 
