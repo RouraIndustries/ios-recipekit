@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "3C06F72A-8BAB-470D-9CCD-8DEDB26DAADC",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:RecipeKit.xcodeproj",
+        "identifier" : "03998D4D2BDE190E00557F4A",
+        "name" : "RecipeKit-UITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:RecipeKit.xcodeproj",
+        "identifier" : "03998D402BDE18FC00557F4A",
+        "name" : "RecipeKit-UnitTests"
+      }
+    }
+  ],
+  "version" : 1
+}
