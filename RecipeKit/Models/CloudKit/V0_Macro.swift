@@ -12,6 +12,8 @@ struct V0_Macro {
     let name: String?
     let quantity: Double?
     let unit: String?
+    let metricQuantity: Double?
+    let metricUnit: String?
     let recipe: CKRecord.Reference?
 }
 
@@ -19,6 +21,8 @@ extension V0_Macro {
     static let kName = "name"
     static let kQuantity = "quantity"
     static let kUnit = "unit"
+    static let kMetricQuantity = "metricQuantity"
+    static let kMetricUnit = "metricUnit"
     static let kRecipe = "recipe"
 }
 
@@ -28,11 +32,7 @@ extension V0_Macro {
     }
 
     var macroUnitLabel: String {
-        get { "\(Int(quantity?.rounded() ?? 0)) \(unit ?? "")" }
-    }
-
-    var macroUnitLabelNoSpace: String {
-        get { "\(Int(quantity?.rounded() ?? 0))\(unit ?? "")" }
+        get { MeasurementFormatterUtil.formatMeasurement(from: quantity, unit: unit, metricQuantity: metricQuantity, metricUnit: metricUnit) }
     }
 }
 
@@ -42,6 +42,8 @@ extension V0_Macro: CKRecordConvertible {
         name = record[Self.kName] as? String ?? ""
         quantity = record[Self.kQuantity] as? Double ?? 0
         unit = record[Self.kUnit] as? String ?? ""
+        metricQuantity = record[Self.kMetricQuantity] as? Double ?? 0
+        metricUnit = record[Self.kMetricUnit] as? String ?? ""
         recipe = record[Self.kRecipe] as? CKRecord.Reference
     }
 }

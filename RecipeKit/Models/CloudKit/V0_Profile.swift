@@ -18,6 +18,7 @@ struct V0_Profile {
     var bio: String?
     var avatarAsset: CKAsset?
     var joinedOnDate: Date?
+    var isUsingMetricUnits: Bool = false
 }
 
 // MARK: - RKProfile - constants
@@ -73,10 +74,10 @@ extension V0_Profile {
 extension V0_Profile: CKRecordConvertible {
     init(record: CKRecord) {
         ckRecordID = record.recordID
-        firstName = record[Self.kFirstName] as? String ?? "No first name"
-        lastName = record[Self.kLastName] as? String ?? "No last name"
-        username = record[Self.kUsername] as? String ?? "No username"
-        bio = record[Self.kBio] as? String ?? "No bio"
+        firstName = record[Self.kFirstName] as? String ?? ""
+        lastName = record[Self.kLastName] as? String ?? ""
+        username = record[Self.kUsername] as? String ?? ""
+        bio = record[Self.kBio] as? String ?? ""
         avatarAsset = record[Self.kAvatarAsset] as? CKAsset
         joinedOnDate = record[Self.kJoinedOnDate] as? Date ?? Date.now
     }
