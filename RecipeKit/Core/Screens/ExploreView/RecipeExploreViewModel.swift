@@ -15,6 +15,10 @@ extension RecipeExploreView {
         var cloudKitManager: CloudKitManager?
 
         var isLoading = false
+        var showError = false
+        var error: AlertItem? {
+            didSet { showError.toggle() }
+        }
 
         func recipesForCuisineType(_ cuisineType: V0_CuisineType) -> [V0_Recipe] {
             guard let recipeManager else { return [] }
@@ -44,7 +48,7 @@ extension RecipeExploreView {
                 hideLoadingView()
             } catch {
                 hideLoadingView()
-                //                self.error = AlertContext.unableToFetchData
+                                self.error = AlertContext.unableToFetchData
             }
         }
 
