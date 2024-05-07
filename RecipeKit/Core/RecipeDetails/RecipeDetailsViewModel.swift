@@ -9,11 +9,16 @@ import Foundation
 import SwiftData
 
 extension RecipeDetailsView {
-    @Observable final class ViewModel: ObservableObject {
+    @Observable final class ViewModel {
+        var modelContext: ModelContext?
         var recipeManager: RecipeManager?
         var cloudKitManager: CloudKitManager?
 
         var isLoading = false
+        var showError = false
+        var error: AlertItem? {
+            didSet { showError.toggle() }
+        }
 
         private let recipe: V0_Recipe
 
@@ -50,7 +55,38 @@ extension RecipeDetailsView {
                 hideLoadingView()
             } catch {
                 hideLoadingView()
-                //                self.error = AlertContext.unableToFetchData
+                                self.error = AlertContext.unableToFetchData
+            }
+        }
+
+        func saveRecipe(_ recipe: V0_Recipe) {
+            showLoadingView()
+
+            let savedRecipe = SavedRecipe(recipeID: recipe.ckRecordID.recordName)
+            modelContext?.insert(savedRecipe)
+
+            do {
+                try modelContext?.save()
+                hideLoadingView()
+                error = AlertContext.savedRecipeSuccess
+            } catch {
+                hideLoadingView()
+                self.error = AlertContext.savedRecipeFailure
+            }
+        }
+
+        func removeRecipe(_ recipe: SavedRecipe) {
+            showLoadingView()
+
+            modelContext?.delete(recipe)
+
+            do {
+                try modelContext?.save()
+                hideLoadingView()
+                error = AlertContext.removeRecipeSuccess
+            } catch {
+                hideLoadingView()
+                self.error = AlertContext.removeRecipeSuccess
             }
         }
 
