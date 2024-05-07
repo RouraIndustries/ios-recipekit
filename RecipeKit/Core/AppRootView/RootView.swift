@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RootView: View {
     static private let kHasSeenOnboardView = "hasSeenOnboardView"
+    @Environment(\.experimentationFacade) private var experimentationFacade
     @Environment(\.cloudKitManager) private var cloudKitManager
 
     @State private var isShowingOnboardView = false
@@ -20,18 +21,33 @@ struct RootView: View {
         AppTabView()
             .onAppear { runStartupChecks() }
             .sheet(isPresented: $isShowingOnboardView) {
-                //                OnboardView()
+                OnboardView()
             }
+    }
+
+    init() {
+        UIApplication.shared.isIdleTimerDisabled = true
     }
 
     func runStartupChecks() {
         if !hasSeenOnboardView {
             isShowingOnboardView = true
             hasSeenOnboardView = true
+        } else {
+            Task { @MainActor in
+                setUpExperimentationFacade()
+            }
+        }
+    }
+
+    func setUpExperimentationFacade() {
+        experimentationFacade.initialize {
+            experimentationFacade.refreshExperiments()
         }
     }
 }
 
 #Preview {
     RootView()
+        .environment(\.cloudKitManager, CloudKitManager())
 }

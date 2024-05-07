@@ -8,5 +8,5 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-RK_APP_VERSION = 2.1.2
-RK_BUNDLE_VERSION = 16
+RK_APP_VERSION = 1.0
+RK_BUNDLE_VERSION = 1
