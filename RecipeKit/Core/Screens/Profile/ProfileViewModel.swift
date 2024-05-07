@@ -10,6 +10,7 @@ import Observation
 import UIKit
 import PhotosUI
 import SwiftUI
+import RouraFoundation
 
 extension ProfileView {
     @Observable final class ViewModel {
@@ -19,16 +20,45 @@ extension ProfileView {
 
         var firstName = ""
         var lastName = ""
-
-        var isLoading = false
+        var username = ""
+        var bio = ""
+        var joinedOnDate: Date = Date.now
         var avatar = PlaceholderImage.avatar
         var photosPickerItem: PhotosPickerItem? {
             didSet { loadImage() }
         }
 
+        var showSettingsView = false
+        var isLoading = false
+        var showError = false
+        var error: AlertItem? {
+            didSet { showError.toggle() }
+        }
+
+        private let bioMaxCharacterLimit = 120
         private var profileContext: ProfileContext = .create
         private var currentUserProfileRecord: CKRecord? {
             didSet { profileContext = .update }
+        }
+
+        var isFormValid: Bool {
+            guard
+                firstName.isEmpty == false,
+                lastName.isEmpty == false,
+                username.isEmpty == false,
+                bio.isEmpty == false,
+                charactersRemainCount >= 0
+            else { return false }
+
+            return true
+        }
+
+        var charactersRemainCount: Int {
+            bioMaxCharacterLimit - bio.trimmingCharacters(in: .whitespacesAndNewlines).count
+        }
+
+        var bioWithinCountThresholdColor: Color {
+            charactersRemainCount > 0 ? .greenPrimary : .redPrimary
         }
 
         var buttonTitle: LocalizedStringResource {
@@ -47,7 +77,7 @@ extension ProfileView {
             }
 
             guard let userRecord = cloudKitManager.userRecord else {
-                //                error = AlertContext.noUserRecord
+                                error = AlertContext.noUserRecord
                 return
             }
 
@@ -66,21 +96,21 @@ extension ProfileView {
                 hideLoadingView()
             } catch {
                 hideLoadingView()
-                //                    self.error = AlertContext.unableToGetProfile
+                                    self.error = AlertContext.unableToGetProfile
             }
         }
 
         func createProfile() async {
             guard let cloudKitManager else { return }
 
-            //            guard isFormValid else {
-            //                error = AlertContext.invalidProfile
-            //                return
-            //            }
+                        guard isFormValid else {
+                            error = AlertContext.invalidProfile
+                            return
+                        }
 
             guard let profileRecord = modifyProfileRecord(context: .create) else { return }
             guard let userRecord = cloudKitManager.userRecord else {
-                //                error = AlertContext.noUserRecord
+                                error = AlertContext.noUserRecord
                 return
             }
 
@@ -97,20 +127,20 @@ extension ProfileView {
                 }
 
                 hideLoadingView()
-                //                    error = AlertContext.createProfileSuccess
+                                    error = AlertContext.createProfileSuccess
             } catch {
                 hideLoadingView()
-                //                    self.error = AlertContext.createProfileFailure
+                                    self.error = AlertContext.createProfileFailure
             }
         }
 
         func updateProfile() async {
             guard let cloudKitManager else { return }
 
-            //            guard isFormValid else {
-            //                error = AlertContext.invalidProfile
-            //                return
-            //            }
+                        guard isFormValid else {
+                            error = AlertContext.invalidProfile
+                            return
+                        }
 
             guard let updatedProfileRecord = modifyProfileRecord(context: .update) else { return }
 
@@ -119,10 +149,10 @@ extension ProfileView {
             do {
                 _ = try await cloudKitManager.save(record: updatedProfileRecord)
                 hideLoadingView()
-                //                    error = AlertContext.updateProfileSuccess
+                                    error = AlertContext.updateProfileSuccess
             } catch {
                 hideLoadingView()
-                //                    self.error = AlertContext.updateProfileFailure
+                                    self.error = AlertContext.updateProfileFailure
             }
         }
 
@@ -135,7 +165,7 @@ extension ProfileView {
 
             case .update:
                 guard let currentUserProfileRecord else {
-                    //                    error = AlertContext.unableToGetProfile
+                                        error = AlertContext.unableToGetProfile
                     return nil
                 }
 
@@ -145,6 +175,9 @@ extension ProfileView {
             profileRecord[V0_Profile.kFirstName] = firstName
             profileRecord[V0_Profile.kLastName] = lastName
             profileRecord[V0_Profile.kAvatarAsset] = avatar.convertToCKAsset()
+            profileRecord[V0_Profile.kUsername] = username
+            profileRecord[V0_Profile.kBio] = bio
+            profileRecord[V0_Profile.kJoinedOnDate] = joinedOnDate
 
             return profileRecord
         }
@@ -154,6 +187,9 @@ extension ProfileView {
             firstName = profile.profileFirstName
             lastName = profile.profileLastName
             avatar = profile.profileImage
+            username = profile.profileUsername
+            bio = profile.profileBio
+            joinedOnDate = profile.profileJoinedOnDate
         }
 
         private func loadImage() {
@@ -161,7 +197,7 @@ extension ProfileView {
                 if let loadedImage = try? await photosPickerItem?.loadTransferable(type: Data.self) {
                     avatar = UIImage(data: loadedImage) ?? PlaceholderImage.avatar
                 } else {
-                    //                    Log.info("Failed")
+                                        Log.info("Failed")
                 }
             }
         }
